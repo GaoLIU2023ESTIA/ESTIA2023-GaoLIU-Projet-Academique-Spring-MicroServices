@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Microservice Client</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.min.css} "/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form name="input" th:action="@{|/addToCart/product/${product.id}|}" method="get">
+            <table border="0">
+                <tr>
+                    <td th:text="${product.id}"></td>
+                </tr>
+                <tr>
+                    <img th:src="${product.illustration}" class="card-img-top"/>
+                </tr>
+                <tr>
+                    <td>ProductName: </td>
+                    <td th:text="${product.title}"></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td th:text="${product.description}"></td>
+                </tr>
+                <tr>
+                    <td>Price: </td>
+                    <td th:text="${product.price}"></td>
+                </tr>
+            </table>
+            Quantity: <input th:type="number" name="quantity">
+            <input th:type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
