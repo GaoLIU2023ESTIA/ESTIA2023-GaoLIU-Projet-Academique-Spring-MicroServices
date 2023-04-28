@@ -1,2 +1,0 @@
-INSERT INTO COMMANDE(id)
-values  (1);
